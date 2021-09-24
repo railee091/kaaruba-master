@@ -17,4 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/memberlist', function () {
+    return view('memberlist');
+});
+
 Route::post('/registerMember', [App\Http\Controllers\RegistrationController::class, 'registerMember']);
