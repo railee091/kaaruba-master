@@ -67,7 +67,7 @@
     </section><!-- End Why Us Section -->
 
     <!-- ======= Clients Section ======= -->
-    <!--section id="clients" class="clients">
+    <section id="clients" class="clients">
       <div class="container" data-aos="zoom-in">
 
         <div class="row d-flex align-items-center">
@@ -99,7 +99,7 @@
         </div>
 
       </div>
-    </section--><!-- End Clients Section -->
+    </section><!-- End Clients Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
@@ -183,8 +183,8 @@
       <div class="container">
 
         <div class="section-title">
-          <span>Portfolio</span>
-          <h2>Portfolio</h2>
+          <span>Images</span>
+          <h2>Images</h2>
           <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
         </div>
 
@@ -192,9 +192,9 @@
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+              <li data-filter=".filter-app">Events</li>
+              <li data-filter=".filter-card">News</li>
+              <li data-filter=".filter-web">Latest</li>
             </ul>
           </div>
         </div>
@@ -296,7 +296,7 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-    <!-- ======= Pricing Section ======= -->
+    <!-- ======= Pricing Section =======>
     <section id="pricing" class="pricing">
       <div class="container">
 
