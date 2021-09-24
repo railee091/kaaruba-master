@@ -17,9 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/memberlist', function () {
-    return view('memberlist');
-});
+Route::get('/memberlist', [App\Http\Controllers\MemberController::class, 'index']);
+
 
 Route::post('/registerMember', [App\Http\Controllers\RegistrationController::class, 'registerMember']);
 Route::get('/updateMemberDetail', [App\Http\Controllers\UpdateMemberDetailController::class, 'updateMemberDetail']);

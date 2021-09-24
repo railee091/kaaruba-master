@@ -34,7 +34,7 @@
 </head>
 
 <body>
-<!-- ======= Top Bar ======= -->
+  <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
@@ -97,7 +97,7 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="fixed-bottom">
-    
+
 
     <div class="container">
       <div class="copyright">
@@ -115,75 +115,80 @@
 
 
 
-<!-- Modal -->
-<div class="modal fade" id="member-registration" tabindex="-1" aria-labelledby="member-registration" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Member Registration</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <form>
-        <div class="modal-body">
+  <!-- Modal -->
+  <div class="modal fade" id="member-registration" tabindex="-1" aria-labelledby="member-registration" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Member Registration</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form method="POST" action="registerMember">
+          @csrf
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Member ID</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="member_number">
+            </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">First Name</label>
-              <input type="email" class="form-control" id="exampleInputEmail1">
+              <input type="text" class="form-control" id="exampleInputEmail1" name="first_name">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Middle Name</label>
-              <input type="email" class="form-control" id="exampleInputEmail1">
+              <input type="text" class="form-control" id="exampleInputEmail1" name="middle_name">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Last Name</label>
-              <input type="email" class="form-control" id="exampleInputEmail1">
+              <input type="text" class="form-control" id="exampleInputEmail1" name="last_name">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Tin Number</label>
-              <input type="email" class="form-control" id="exampleInputEmail1">
+              <input type="text" class="form-control" id="exampleInputEmail1" name="tax_identification_number">
             </div>
-        </div>
+          </div>
 
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
 
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="option-modal" tabindex="-1" aria-labelledby="option-modal" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Member Registration</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </form>
       </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="option-modal" tabindex="-1" aria-labelledby="option-modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Member Registration</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
         <div class="modal-body">
-           Option
+          Option
         </div>
 
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
+      </div>
     </div>
   </div>
-</div>
 
 </body>
 
 
 <!-- Vendor JS Files -->
-  <script src="{{ asset('vendor/aos/aos.js') }}"></script>
-  <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
-  <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-  <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
-  <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
+<script src="{{ asset('vendor/aos/aos.js') }}"></script>
+<script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
+<script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+<script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
+<script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
 
-  <!-- Template Main JS File -->
-  <script src="{{ asset('js/main.js') }}"></script>
+<!-- Template Main JS File -->
+<script src="{{ asset('js/main.js') }}"></script>
 
 
 </html>
