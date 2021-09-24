@@ -35,6 +35,7 @@
                 </thead>
                 <tbody>
                   @foreach($members as $member)
+                  @if(isset($member->details))
                   <tr>
                     <th scope="row">{{ $member->id }}</th>
                     <td>{{ $member->first_name }}</td>
@@ -47,6 +48,7 @@
                       <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#option2-modal">X</button>
                     </td>
                   </tr>
+                  @endif
                   @endforeach
                 </tbody>
               </table>
