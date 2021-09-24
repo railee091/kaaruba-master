@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class MembershipTermination extends Model
 {
+
+    protected $fillable = [
+        'resolution_number',
+        'termination_date',
+        'member_id'
+    ];
+
     use HasFactory;
 }

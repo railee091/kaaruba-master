@@ -30,6 +30,6 @@ class Member extends Model
 
     public function details()
     {
-        return $this->hasOne('member_details');
+        return $this->hasMany('App\Models\MemberDetails');
     }
 }

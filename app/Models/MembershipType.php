@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class MembershipType extends Model
 {
+
+    protected $fillable = [
+        'type'
+    ];
+
     use HasFactory;
 
     public function member()

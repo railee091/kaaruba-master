@@ -10,14 +10,14 @@ class RegistrationService
     {
         $data = [
             'member_number' => $memberData->member_number,
-            'first_name' => $memberData->first_name,
-            'middle_name' => $memberData->middle_name,
-            'last_name' => $memberData->last_name,
+            'first_name' => ucwords($memberData->first_name),
+            'middle_name' => ucwords($memberData->middle_name),
+            'last_name' => ucwords($memberData->last_name),
             'tax_identification_number' => $memberData->tax_identification_number
         ];
 
-        Member::create($data);
+        $result = Member::create($data);
 
-        return $memberData;
+        return $result;
     }
 }
