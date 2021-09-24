@@ -68,6 +68,7 @@
             </ul>
           </li-->
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Register</button></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
