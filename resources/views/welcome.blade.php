@@ -5,7 +5,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li></li>
         </ol>
 
@@ -15,7 +15,7 @@
     <section class="inner-page">
       <div class="container">
         <p>
-         Homepage
+         <h1></h1>
         </p>
       </div>
     </section>

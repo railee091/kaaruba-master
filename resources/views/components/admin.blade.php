@@ -54,7 +54,7 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">Day</a></h1>
+      <h1 class="logo"><a href="/">KAARUBA</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -101,11 +101,11 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Kaaruba</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Kaaruba Transport Group Cooperative</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
 
-        Designed by <a href="https://bootstrapmade.com/">GDMR</a>
+        Designed by <a href="/">GDMR</a>
       </div>
     </div>
   </footer><!-- End Footer -->
