@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class MembershipType extends Model
 {
     use HasFactory;
+
+    public function member()
+    {
+        return $this->belongsTo('members');
+    }
 }
