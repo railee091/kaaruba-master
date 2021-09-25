@@ -14,7 +14,7 @@ class MemberController extends Controller
     public function index()
     {
         $members = new Member;
-        $details = $members::with('details')->get();
+        $details = $members->get();
         // dd($details);
         // dd($det);
         return view('memberlist')->with('members', $details);

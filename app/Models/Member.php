@@ -20,12 +20,12 @@ class Member extends Model
 
     public function profile()
     {
-        return $this->hasOne('membership_profile');
+        return $this->hasOne('App\Models\MembershipProfile');
     }
 
     public function type()
     {
-        return $this->hasOne('membership_type');
+        return $this->hasOne('App\Models\MembershipType', 'id');
     }
 
     public function details()
