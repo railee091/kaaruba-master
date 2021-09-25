@@ -19,4 +19,8 @@ class MemberController extends Controller
         // dd($det);
         return view('memberlist')->with('members', $details);
     }
+
+    public function deleteMember()
+    {
+    }
 }
