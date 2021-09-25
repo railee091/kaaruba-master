@@ -44,10 +44,10 @@
                     <td>
                       <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#option-modal">Edit</button>
                       <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#option2-modal">View</button>
-                      <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#option2-modal">X</button>
+                      <button type="button" class="btn btn-sm btn-danger btn-info">X</button>
                     </td>
                   </tr>
-
+                  @endforeach
                 </tbody>
               </table>
             </div>
