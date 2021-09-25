@@ -54,7 +54,9 @@
                       <div class="modal fade" id="option-modal-{{ $member->id }}" tabindex="-1" aria-labelledby="option-modal-{{ $member->id }}" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg">
                           <div class="modal-content">
-                            <form>
+                            <form method="POST" action="updateMemberDetails">
+                              @csrf
+                              <input type="hidden" name="member_id" value="{{ $member->id }}" />
                               <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Edit Member Information ({{ $member->id }}-{{ $member->first_name }})</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -75,29 +77,29 @@
                                     <div class="row mb-3">
                                       <div class="col">
                                         <label for="exampleInputEmail1" class="form-label">Date Accepted</label>
-                                        <input type="text" class="form-control" id="date_accepted" name="member_number" value="{{ isset($member->profile->date_accepted) ? $member->profile->date_accepted : '' }}">
+                                        <input type="date" class="form-control" id="date_accepted" name="date_accepted" value="{{ isset($member->profile->date_accepted) ? $member->profile->date_accepted : '' }}">
                                       </div>
                                       <div class="col">
                                         <label for="exampleInputEmail1" class="form-label">Resolution Number</label>
-                                        <input type="text" class="form-control" id="resolution_number" name="member_number" value="{{ isset($member->profile->resolution_number) ?  $member->profile->resolution_number : ''}}"">
+                                        <input type="text" class="form-control" id="resolution_number" name="resolution_number" value="{{ isset($member->profile->resolution_number) ?  $member->profile->resolution_number : ''}}"">
                                         </div>
                                         <div class=" col">
                                         <label for="exampleInputEmail1" class="form-label">Membership Type</label>
-                                        <input type="text" class="form-control" id="type" name="" value="{{ isset($member->type->type) ? $member->type->type : ''}}">
+                                        <input type="text" class="form-control" id="type" name="type" value="{{ isset($member->type->id) ? $member->type->id : ''}}">
                                       </div>
                                     </div>
                                     <div class="row mb-3">
                                       <div class="col">
                                         <label for="exampleInputEmail1" class="form-label">Shares Subscribed</label>
-                                        <input type="text" class="form-control" id="shares_subscribed" name="member_number" value="{{ isset($member->profile->shares_subscribed) ? $member->profile->shares_subscribed : '' }}">
+                                        <input type="number" class="form-control" id="shares_subscribed" name="shares_subscribed" value="{{ isset($member->profile->shares_subscribed) ? $member->profile->shares_subscribed : '' }}">
                                       </div>
                                       <div class="col">
                                         <label for="exampleInputEmail1" class="form-label">Amount Subscribed</label>
-                                        <input type="text" class="form-control" id="amount_subscribed" name="member_number" value="{{ isset($member->profile->amount_subscribed) ? $member->profile->amount_subscribed : ''}}">
+                                        <input type="number" class="form-control" id="amount_subscribed" name="amount_subscribed" value="{{ isset($member->profile->amount_subscribed) ? $member->profile->amount_subscribed : ''}}">
                                       </div>
                                       <div class="col">
                                         <label for="exampleInputEmail1" class="form-label">Initial Paid up</label>
-                                        <input type="text" class="form-control" id="initial_paid_up" name="member_number" value="{{ isset($member->profile->initial_paid_up) ? $member->profile->initial_paid_up : ''}}">
+                                        <input type="number" class="form-control" id="initial_paid_up" name="initial_paid_up" value="{{ isset($member->profile->initial_paid_up) ? $member->profile->initial_paid_up : ''}}">
                                       </div>
                                     </div>
 
@@ -115,19 +117,19 @@
                                     <div class="row mb-3">
                                       <div class="col">
                                         <label for="exampleInputEmail1" class="form-label">Date of Birth</label>
-                                        <input type="text" class="form-control" id="date_of_birth" name="date_of_birth" value="{{ isset($member->details->date_of_birth) ? $member->details->date_of_birth : ''}}" disabled="{{ isset($member->details->date_of_birth) ? true : false }}">
+                                        <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" value="{{ isset($member->details->date_of_birth) ? $member->details->date_of_birth : ''}}">
                                       </div>
-                                      <div class="col">
+                                      <!-- <div class="col">
                                         <label for="exampleInputEmail1" class="form-label">Age</label>
-                                        <input type="text" class="form-control" id="age" name="age" value="{{ isset($member->details->age) ? $member->details->age : '' }}" disabled="{{ isset($member->details->age) ? true : false }} ">
-                                      </div>
+                                        <input type="text" class="form-control" id="age" name="age" value="{{ isset($member->details->age) ? $member->details->age : '' }}">
+                                      </div> -->
                                       <div class="col">
                                         <label for="exampleInputEmail1" class="form-label">Gender</label>
-                                        <input type="text" class="form-control" id="gender" name="gender" value="{{ isset($member->details->gender) ? $member->details->gender : '' }}" disabled="{{ isset($member->details->gender) ? true : false }}">
+                                        <input type="text" class="form-control" id="gender" name="gender" value="{{ isset($member->details->gender) ? $member->details->gender : '' }}">
                                       </div>
                                       <div class="col">
                                         <label for="exampleInputEmail1" class="form-label">Civil Status</label>
-                                        <input type="text" class="form-control" id="civil_status" name="civil_status" value="{{ isset($member->details->civil_status) ? $member->details->civil_status : '' }}" disabled="{{ isset($member->details->civil_status) ? true : false }}">
+                                        <input type="text" class="form-control" id="civil_status" name="civil_status" value="{{ isset($member->details->civil_status) ? $member->details->civil_status : '' }}">
                                       </div>
                                     </div>
 
@@ -136,26 +138,26 @@
                                     <div class="row mb-3">
                                       <div class="col">
                                         <label for="exampleInputEmail1" class="form-label">Educational Attainment</label>
-                                        <input type="text" class="form-control" id="educational_attainment" name="educational_attainment" value="{{ isset($member->details->educational_attainment) ? $member->details->educational_attainment : '' }}" disabled="{{ isset($member->details->educational_attainment) ? true : false }}">
+                                        <input type="text" class="form-control" id="educational_attainment" name="educational_attainment" value="{{ isset($member->details->educational_attainment) ? $member->details->educational_attainment : '' }}">
                                       </div>
                                       <div class="col">
                                         <label for="exampleInputEmail1" class="form-label">Occupation</label>
-                                        <input type="text" class="form-control" id="occupation" name="occupation" value="{{ isset($member->details->occupation) ? $member->details->occupation : ''}}" disabled="{{ isset($member->details->occupation) ? true : false }}">
+                                        <input type="text" class="form-control" id="occupation" name="occupation" value="{{ isset($member->details->occupation) ? $member->details->occupation : ''}}">
                                       </div>
                                     </div>
 
                                     <div class="row mb-3">
                                       <div class="col-2">
                                         <label for="exampleInputEmail1" class="form-label">Dependents</label>
-                                        <input type="text" class="form-control" id="dependents" name="dependents" value="{{ isset($member->details->dependents) ? $member->details->dependents : '' }}" disabled="{{ isset($member->details->dependents) ? true : false }}">
+                                        <input type="text" class="form-control" id="dependents" name="dependents" value="{{ isset($member->details->dependents) ? $member->details->dependents : '' }}">
                                       </div>
                                       <div class="col-6">
                                         <label for="exampleInputEmail1" class="form-label">Annual Income</label>
-                                        <input type="text" class="form-control" id="annual_income" name="annual_income" value="{{ isset($member->details->annual_income) ? $member->details->annual_income : '' }}" disabled="{{ isset($member->details->annual_income) ? true : false }}">
+                                        <input type="number" class="form-control" id="annual_income" name="annual_income" value="{{ isset($member->details->annual_income) ? $member->details->annual_income : '' }}">
                                       </div>
                                       <div class="col">
                                         <label for="exampleInputEmail1" class="form-label">Religion</label>
-                                        <input type="text" class="form-control" id="religion" name="religion" value="{{ isset($member->details->religion) ? $member->details->religion : '' }}" disabled="{{ isset($member->details->religion) ? true : false }}">
+                                        <input type="text" class="form-control" id="religion" name="religion" value="{{ isset($member->details->religion) ? $member->details->religion : '' }}">
                                       </div>
                                     </div>
                                   </div>
@@ -227,7 +229,7 @@
                                 </div>
                                 <div class="col">
                                   <label for="exampleInputEmail1" class="form-label"><b>Gender</b></label>
-                                  <input type="text" readonly class="form-control-plaintext" id="gender" name="gender" value="{{ isset($member->details->gender) ? $member->details->age : '' }}" disabled="{{ isset($member->details->age) ? true : false }}">
+                                  <input type="text" readonly class="form-control-plaintext" id="gender" name="gender" value="{{ isset($member->details->gender) ? $member->details->gender : '' }}" disabled="{{ isset($member->details->gender) ? true : false }}">
                                 </div>
                                 <div class="col">
                                   <label for="exampleInputEmail1" class="form-label"><b>Civil Status</b></label>
