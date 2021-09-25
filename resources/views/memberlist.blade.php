@@ -269,7 +269,7 @@
 
                       <!-- Modal Delete and delete confirm start-->
 
-                      <div class="modal fade" id="option3-modal-{{ $member->id }}-{{ $member->first_name }}" tabindex="-1" aria-labelledby="option3-modal-{{ $member->id }}-{{ $member->first_name }}" aria-hidden="true">
+                      <div class="modal fade" id="option3-modal-{{ $member->id }}" tabindex="-1" aria-labelledby="option3-modal-{{ $member->id }}" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                           <div class="modal-content">
                             <div class="modal-header bg-danger">
