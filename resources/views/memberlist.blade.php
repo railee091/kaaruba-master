@@ -42,16 +42,16 @@
                     <td>{{ $member->last_name }}</td>
                     <td>{{ $member->tax_identification_number }}</td>
                     <td>
-                      <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#option-modal-{{ $member->id }}-{{ $member->first_name }}">Edit</button>
-                      <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#option2-modal-{{ $member->id }}-{{ $member->first_name }}">View</button>
-                      <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#option3-modal-{{ $member->id }}-{{ $member->first_name }}">delete</button>
+                      <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#option-modal-{{ $member->id }}">Edit</button>
+                      <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#option2-modal-{{ $member->id }}">View</button>
+                      <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#option3-modal-{{ $member->id }}">delete</button>
 
                       <!---==================================================================================foreach modals start here======================================================================-->
 
 
 
                       <!-- Modal Edit start-->
-                      <div class="modal fade" id="option-modal-{{ $member->id }}-{{ $member->first_name }}" tabindex="-1" aria-labelledby="option-modal-{{ $member->id }}-{{ $member->first_name }}" aria-hidden="true">
+                      <div class="modal fade" id="option-modal-{{ $member->id }}" tabindex="-1" aria-labelledby="option-modal-{{ $member->id }}" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg">
                           <div class="modal-content">
                             <form>
@@ -62,16 +62,16 @@
                               <div class="modal-body">
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                   <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Profile</button>
+                                    <button class="nav-link active" id="home-tab-{{ $member->id }}" data-bs-toggle="tab" data-bs-target="#home-{{ $member->id }}" type="button" role="tab" aria-controls="home-{{ $member->id }}" aria-selected="true">Profile</button>
                                   </li>
                                   <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Details</button>
+                                    <button class="nav-link" id="profile-tab-{{ $member->id }}" data-bs-toggle="tab" data-bs-target="#profile-{{ $member->id }}" type="button" role="tab" aria-controls="profile-{{ $member->id }}" aria-selected="false">Details</button>
                                   </li>
                                 </ul>
-                                <div class="tab-content" id="myTabContent">
+                                <div class="tab-content" id="myTabContent-{{ $member->id }}">
                                   <!--profile tab-->
 
-                                  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                  <div class="tab-pane fade show active" id="home-{{ $member->id }}" role="tabpanel" aria-labelledby="home-tab-{{ $member->id }}">
                                     <div class="row mb-3">
                                       <div class="col">
                                         <label for="exampleInputEmail1" class="form-label">Date Accepted</label>
@@ -105,7 +105,7 @@
                                   </div>
 
                                   <!--Details tab-->
-                                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                  <div class="tab-pane fade" id="profile-{{ $member->id }}" role="tabpanel" aria-labelledby="profile-tab-{{ $member->id }}">
                                     <div class="row mb-3">
                                       <div class="col">
                                         <label for="exampleInputEmail1" class="form-label">Address</label>
@@ -171,7 +171,7 @@
                       </div>
                       <!-- Modal edit end -->
                       <!-- Modal View start-->
-                      <div class="modal fade" id="option2-modal-{{ $member->id }}-{{ $member->first_name }}" tabindex="-1" aria-labelledby="option2-moda-{{ $member->id }}-{{ $member->first_name }}l" aria-hidden="true">
+                      <div class="modal fade" id="option2-modal-{{ $member->id }}" tabindex="-1" aria-labelledby="option2-moda-{{ $member->id }}-{{ $member->first_name }}l" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg">
                           <div class="modal-content">
                             <div class="modal-header">
