@@ -22,3 +22,4 @@ Route::get('/memberlist', [App\Http\Controllers\MemberController::class, 'index'
 
 Route::post('/registerMember', [App\Http\Controllers\RegistrationController::class, 'registerMember']);
 Route::post('/updateMemberDetails', [App\Http\Controllers\UpdateMemberDetailController::class, 'updateMemberDetail']);
+Route::get('/removeMember/{id}', [App\Http\Controllers\MemberController::class, 'removeMember']);

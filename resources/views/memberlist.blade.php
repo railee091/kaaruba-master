@@ -25,10 +25,10 @@
               <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Member ID</th>
+                    <th scope="col">Last name</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Middle Name</th>
-                    <th scope="col">Last name</th>
                     <th scope="col">Tin</th>
                     <th scope="col">Option</th>
                   </tr>
@@ -37,14 +37,14 @@
                   @foreach($members as $member)
                   <tr>
                     <th scope="row">{{ $member->id }}</th>
+                    <td>{{ $member->last_name }}</td>
                     <td>{{ $member->first_name }}</td>
                     <td>{{ $member->middle_name }}</td>
-                    <td>{{ $member->last_name }}</td>
                     <td>{{ $member->tax_identification_number }}</td>
                     <td>
-                      <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#option-modal-{{ $member->id }}">Edit</button>
+                      <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#option-modal-{{ $member->id }}" {{ isset($member->terminates) ? 'disabled' : '' }}> {{ isset($member->terminates) ? 'Edit' : 'Edit' }}</button>
                       <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#option2-modal-{{ $member->id }}">View</button>
-                      <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#option3-modal-{{ $member->id }}">delete</button>
+                      <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#option3-modal-{{ $member->id }}" {{ isset($member->terminates) ? 'disabled' : '' }}> {{ isset($member->terminates) ? 'Terminated' : 'Terminate' }}</button>
 
                       <!---==================================================================================foreach modals start here======================================================================-->
 
@@ -237,7 +237,6 @@
                                 </div>
                               </div>
 
-                              <hr />
                               <div class="row mb-3">
                                 <div class="col">
                                   <label for="exampleInputEmail1" class="form-label"><b>Educational Attainment</b></label>
@@ -279,12 +278,12 @@
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                              Are you sure you want to delete entry <br />
-                              {{ $member->first_name }} {{ $member->last_name }} permanenty?
+                              Are you sure you want to terminate <br />
+                              {{ $member->first_name }} {{ $member->last_name }}'s records permanenty?
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancel</button>
-                              <a href="#" type="button" class="btn btn-danger">Delete</a>
+                              <a href="/removeMember/{{ $member->id }}" type="button" class="btn btn-danger">Delete</a>
                             </div>
                           </div>
                         </div>
