@@ -26,6 +26,6 @@ class MemberDetails extends Model
 
     public function member()
     {
-        return $this->belongsTo('App\Http\Models\Member');
+        return $this->belongsTo('App\Models\Member');
     }
 }

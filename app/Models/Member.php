@@ -32,4 +32,9 @@ class Member extends Model
     {
         return $this->hasOne('App\Models\MemberDetails', 'member_id');
     }
+
+    public function terminates()
+    {
+        return $this->hasOne('App\Models\MembershipTermination', 'member_id');
+    }
 }
