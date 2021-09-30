@@ -312,7 +312,7 @@
 } );
  $('#table_id').dataTable( {
   "pageLength": 5,
-  "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "Show all"]]
+  "lengthMenu": [[5, 10, 15], [5, 10, 15]]
 } );
 </script>
 </main><!-- End #main -->
