@@ -22,7 +22,7 @@
               Listing all members
             </div>
             <div class="card-body">
-              <table class="table" id="table_id" >
+              <table class="table" id="table_id">
                 <thead>
                   <tr>
                     <th scope="col">Member ID</th>
@@ -91,7 +91,7 @@
                                     <div class="row mb-3">
                                       <div class="col">
                                         <label for="exampleInputEmail1" class="form-label">Shares Subscribed</label>
-                                        <input type="number" class="form-control" id="shares_subscribed" name="shares_subscribed" value="{{ isset($member->profile->shares_subscribed) ? $member->profile->shares_subscribed : '' }}">
+                                        <input type="number" class="form-control" id="shares_subscribed" name="shares_subscribed" value="{{ isset($member->profile->shares_subscribed) ? $member->profile->shares_subscribed : '1200' }}">
                                       </div>
                                       <div class="col">
                                         <label for="exampleInputEmail1" class="form-label">Amount Subscribed</label>
@@ -304,15 +304,18 @@
 
 
 
-  
-<script type="text/javascript">
- $(document).ready( function () {
-    $('#table_id').DataTable();
 
-} );
- $('#table_id').dataTable( {
-  "pageLength": 5,
-  "lengthMenu": [[5, 10, 15], [5, 10, 15]]
-} );
-</script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#table_id').DataTable();
+
+    });
+    $('#table_id').dataTable({
+      "pageLength": 5,
+      "lengthMenu": [
+        [5, 10, 15],
+        [5, 10, 15]
+      ]
+    });
+  </script>
 </main><!-- End #main -->

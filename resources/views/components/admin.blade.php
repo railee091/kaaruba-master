@@ -113,46 +113,46 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
-  
+
   <!-- Modal -->
-    <div class="modal fade" id="member-registration" tabindex="-1" aria-labelledby="member-registration" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Member Registration</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <form method="POST" action="registerMember">
-            @csrf
-            <div class="modal-body">
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Member ID</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="member_number">
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="first_name">
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Middle Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="middle_name">
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="last_name">
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Tin Number</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="tax_identification_number">
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </form>
+  <div class="modal fade" id="member-registration" tabindex="-1" aria-labelledby="member-registration" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Member Registration</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <form method="POST" action="registerMember">
+          @csrf
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Member ID</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="member_number">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="first_name">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Middle Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="middle_name">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="last_name">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Tin Number</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="tax_identification_number">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
       </div>
     </div>
+  </div>
 </body>
 
 

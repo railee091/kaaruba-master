@@ -13,4 +13,9 @@ class MembershipType extends Model
     ];
 
     use HasFactory;
+
+    public function member()
+    {
+        return $this->hasOne('App/Models/MembershipProfile', 'membership_type');
+    }
 }

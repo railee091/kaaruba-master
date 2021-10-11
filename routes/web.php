@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Resources\MemberCollection;
+use App\Models\Member;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +25,7 @@ Route::get('/memberlist', [App\Http\Controllers\MemberController::class, 'index'
 Route::post('/registerMember', [App\Http\Controllers\RegistrationController::class, 'registerMember']);
 Route::post('/updateMemberDetails', [App\Http\Controllers\UpdateMemberDetailController::class, 'updateMemberDetail']);
 Route::get('/removeMember/{id}', [App\Http\Controllers\MemberController::class, 'removeMember']);
+
+Route::get('/fetchMembers', function () {
+    return MemberCollection::collection(Member::all());
+});

@@ -24,4 +24,9 @@ class MembershipProfile extends Model
     {
         return $this->belongsTo('members');
     }
+
+    public function types()
+    {
+        return $this->belongsTo('App\Models\MembershipType', 'membership_type');
+    }
 }
