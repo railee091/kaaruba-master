@@ -20,7 +20,7 @@ class MemberController extends Controller
         $details = MemberCollection::collection(Member::get());
 
         // dd($details);
-        return response()->json($details);
+        // return response()->json([$details]);
         return view('memberlist')->with('members', $details);
     }
 

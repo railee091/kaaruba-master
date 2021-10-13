@@ -22,6 +22,7 @@ class MemberCollection extends JsonResource
             'first_name' => $this->first_name,
             'middle_name' => $this->middle_name,
             'last_name' => $this->last_name,
+            'member_number' => $this->member_number,
             'tax_identification_number' => $this->tax_identification_number,
             'details' => DetailResource::collection($this->details()->get()),
             'profile' => ProfileResource::collection($this->profile()->get())
