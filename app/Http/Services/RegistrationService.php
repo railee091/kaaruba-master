@@ -8,7 +8,7 @@ class RegistrationService
 {
     public function registerMember($memberData)
     {
-
+        // dd($memberData);
         $result = Member::firstOrCreate(['member_number' => $memberData['member_number']], [
             'member_number' => $memberData['member_number'],
             'first_name' => ucwords($memberData['first_name']),
