@@ -9,7 +9,7 @@ class RegistrationService
     public function registerMember($memberData)
     {
         // dd($memberData);
-        $result = Member::firstOrCreate(['d' => $memberData['member_number']], [
+        $result = Member::firstOrCreate(['member_number' => $memberData['member_number']], [
             'member_number' => $memberData['member_number'],
             'first_name' => ucwords($memberData['first_name']),
             'middle_name' => ucwords($memberData['middle_name']),
