@@ -51,17 +51,17 @@ class AuthController extends Controller
 
         if (!$user || !Hash::check($fields['password'], $user->password)) {
             return response([
-                'message' => 'Bad creds'
-            ], 401);
+                'message' => 'Invalid credentials'
+            ], 201);
         }
 
-        $token = $user->createToken('myAppToken')->plainTextToken;
+        $token = $user->createToken('myAppToken', ['admin:check'])->plainTextToken;
 
         $response = [
             'user' => $user,
             'token' => $token
         ];
 
-        return response($response, 201);
+        return response($response, 200);
     }
 }

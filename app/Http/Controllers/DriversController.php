@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\RegisterDriverService;
 use Illuminate\Http\Request;
+
 
 class DriversController extends Controller
 {
@@ -13,7 +15,6 @@ class DriversController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -24,7 +25,9 @@ class DriversController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $addDriver = (new RegisterDriverService)->registerDriver($request);
+
+        return response(['message' => 'Driver details added!']);
     }
 
     /**

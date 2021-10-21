@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class SalaryGrade extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'type',
+        'salary'
+    ];
+
+
+    public function drivers()
+    {
+        return $this->belongsToMany('App/Models/Driver');
+    }
 }

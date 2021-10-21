@@ -37,4 +37,9 @@ class Member extends Model
     {
         return $this->hasOne('App\Models\MembershipTermination', 'member_id');
     }
+
+    public function drivers()
+    {
+        return $this->hasMany('App\Models\Driver');
+    }
 }

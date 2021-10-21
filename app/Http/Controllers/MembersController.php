@@ -34,7 +34,9 @@ class MembersController extends Controller
     public function store(Request $request)
     {
         $response = (new RegistrationService)->registerMember($request->all());
-        return response()->json($response);
+        return response([
+            'message' => 'Successfully added new member!'
+        ]);
     }
 
     /**
@@ -62,7 +64,9 @@ class MembersController extends Controller
         // dd($request);
         $response = (new UpdateDetailService)->updateDetails($request->all(), $id);
 
-        return response()->json($response);
+        return response([
+            'message' => 'Successfully updated member details!'
+        ]);
     }
 
     /**
@@ -74,5 +78,6 @@ class MembersController extends Controller
     public function destroy($id)
     {
         (new RemoveMemberService)->removeMember($id);
+        return response(['message' => 'Membership terminated!']);
     }
 }
